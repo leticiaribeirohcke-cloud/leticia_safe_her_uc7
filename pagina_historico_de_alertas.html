@@ -1,92 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico de Alertas</title>
+    <title>SafeHer - Histórico de Alertas</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <main class="pagina-historico">
 
-        <a href="pagina_sos.html" class="voltar">
+        <a
+            href="pagina_sos.html"
+            class="voltar">
+
             ←
+
         </a>
 
         <h1>Histórico de Alertas</h1>
+
         <section class="filtros">
-            <button class="ativo">Todos</button>
-            <button>Enviados</button>
-            <button>Cancelados</button>
+
+            <button
+                class="ativo"
+                id="btnTodos">
+
+                Todos
+
+            </button>
+
+            <button id="btnEnviados">
+                Enviados
+            </button>
+
+            <button id="btnCancelados">
+                Cancelados
+            </button>
+
         </section>
 
-        <section class="lista-alertas">
-            <div class="alerta-card">
-                <div class="icone-alerta">
-                    🚨
-                </div>
+        <section
+            class="lista-alertas"
+            id="listaAlertas">
 
-                <div class="dados-alerta">
-                    <h3>Alerta enviado</h3>
-                    <p>16/05/2026 - 22:47</p>
-                </div>
-
-                <span class="status-concluido">
-                    Concluído
-                </span>
-            </div>
-
-            <div class="alerta-card">
-                <div class="icone-alerta">
-                    🚨
-                </div>
-
-                <div class="dados-alerta">
-                    <h3>Alerta enviado</h3>
-                    <p>21/03/2026 - 14:51</p>
-                </div>
-
-                <span class="status-concluido">
-                    Concluído
-                </span>
-            </div>
-
-            <div class="alerta-card">
-                <div class="icone-alerta">
-                    ⚠️
-                </div>
-
-                <div class="dados-alerta">
-                    <h3>Alerta cancelado</h3>
-                    <p>05/12/2025 - 21:33</p>
-                </div>
-
-                <span class="status-cancelado">
-                    Cancelado
-                </span>
-            </div>
-
-            <div class="alerta-card">
-                <div class="icone-alerta">
-                    🚨
-                </div>
-
-                <div class="dados-alerta">
-                    <h3>Alerta enviado</h3>
-                    <p>21/03/2026 - 14:51</p>
-                </div>
-
-                <span class="status-concluido">
-                    Concluído
-                </span>
-            </div>
         </section>
 
         <p class="observacao">
             Os alertas são armazenados por 90 dias.
         </p>
+
     </main>
 
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>

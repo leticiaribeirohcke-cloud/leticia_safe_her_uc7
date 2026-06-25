@@ -1,71 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeHer - Login</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <main class="pagina-login">
 
-        <!-- Botão voltar -->
         <div class="voltar">
-            <a href="pagina_inicial.html">←</a>
+            <a href="pagina_inicial.html">
+                ←
+            </a>
         </div>
 
-        <!-- Título -->
         <section class="cabecalho-login">
+
             <h1>Bem-vinda de volta!</h1>
-            <p>Faça login para continuar</p>
+
+            <p>
+                Faça login para continuar
+            </p>
+
         </section>
 
-        <!-- Formulário -->
-        <form class="form-login">
-            <label for="email">Email</label>
+        <form
+            id="formLogin"
+            class="form-login">
+
+            <label for="email">
+                Email
+            </label>
+
             <input
                 type="email"
                 id="email"
                 placeholder="Digite seu email"
                 required>
-            <label for="senha">Senha</label>
+
+            <label for="senha">
+                Senha
+            </label>
+
             <input
                 type="password"
                 id="senha"
                 placeholder="Digite sua senha"
                 required>
+
             <div class="esqueceu-senha">
-                <a href="#">Esqueceu sua senha?</a>
+
+                <a href="recuperar_senha.html">
+                    Esqueceu sua senha?
+                </a>
+
             </div>
 
             <div class="area-botao">
-                <button type="submit" class="btn-entrar">
+
+                <button
+                    type="submit"
+                    class="btn-entrar">
+                <a href="pagina_sos.html">
+
                     ENTRAR
+                </a>
                 </button>
+
             </div>
+
         </form>
 
-        <!-- Separador -->
         <div class="separador">
-            <span>ou</span>
+            <span>OU</span>
         </div>
 
-        <!-- Google -->
         <div class="google-login">
-            <button type="button">
-                Entrar com o Google
+
+            <button
+                type="button"
+                id="btnGoogleLogin">
+
+                Entrar com Google
+
             </button>
+
         </div>
 
-        <!-- Cadastro -->
         <div class="cadastro-link">
+
             <p>
-                Não tem conta?
-                <a href="pagina_cadastro.html">Cadastre-se</a>
+
+                Não possui conta?
+
+                <a href="pagina_cadastro.html">
+                    Cadastre-se
+                </a>
+
             </p>
+
         </div>
+
     </main>
 
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>

@@ -1,96 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeHer - SOS</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <main class="pagina-sos">
+
         <header class="topo-sos">
-            <div class="menu">☰</div>
+
+            <div class="menu">
+                ☰
+            </div>
+
             <h2>SafeHer</h2>
-            <div class="notificacao">🔔</div>
+
+            <div class="notificacao">
+                🔔
+            </div>
+
         </header>
 
         <section class="area-sos">
+
             <h3>PRECISA DE AJUDA?</h3>
-            <button class="botao-sos" onclick="abrirPopup()">
+
+            <button
+                class="botao-sos"
+                id="btnSOS">
+
                 SOS
+
             </button>
+
             <p>TOQUE PARA ENVIAR O ALERTA</p>
+
         </section>
 
         <section class="opcoes">
-            <a href="#">📍 Compartilhar localização</a>
-            <a href="#">👥 Contatos de confiança</a>
-            <a href="#">📋 Histórico de alertas</a>
-            <a href="#">🎤 Gravador de voz</a>
-            <a href="#">⚙️ Configurações</a>
+
+            <a href="pagina_localizacao.html">
+                📍 Compartilhar localização
+            </a>
+
+            <a href="pagina_contatos.html">
+                👥 Contatos de confiança
+            </a>
+
+            <a href="pagina_historico_de_alertas.html">
+                📋 Histórico de alertas
+            </a>
+
+            <a href="pagina_gravador.html">
+                🎤 Gravador de voz
+            </a>
+
+            <a href="pagina_configuracoes.html">
+                ⚙️ Configurações
+            </a>
+
         </section>
 
         <footer class="menu-inferior">
+
             <a href="pagina_sos.html">
                 🏠 <br> INÍCIO
             </a>
 
-            <a href="#">
+            <a href="pagina_contatos.html">
                 👥 <br> CONTATOS
             </a>
 
-            <a href="#">
+            <a href="pagina_historico_de_alertas.html">
                 🔔 <br> ALERTAS
             </a>
 
-            <a href="#">
+            <a href="pagina_perfil.html">
                 👤 <br> PERFIL
             </a>
+
         </footer>
+
     </main>
 
     <!-- POPUP SOS -->
 
-    <div id="popupSOS" class="popup-sos">
+    <div
+        id="popupSOS"
+        class="popup-sos">
+
         <div class="janela-sos">
+
             <div class="icone-sos">
                 SOS
             </div>
 
             <h3>Enviar alerta agora?</h3>
+
             <p>
                 Seus contatos de emergência serão notificados
                 com sua localização em tempo real.
             </p>
 
-            <button class="btn-enviar" onclick="enviarAlerta()">
+            <button
+                class="btn-enviar"
+                id="btnEnviarAlerta">
+
                 ENVIAR ALERTA
+
             </button>
 
-            <button class="btn-cancelar" onclick="fecharPopup()">
+            <button
+                class="btn-cancelar"
+                id="btnCancelarPopup">
+
                 CANCELAR
+
             </button>
 
         </div>
+
     </div>
 
-    <script>
-
-        function abrirPopup() {
-            document.getElementById("popupSOS").style.display = "flex";
-        }
-
-        function fecharPopup() {
-            document.getElementById("popupSOS").style.display = "none";
-        }
-
-        function enviarAlerta() {
-            alert("Alerta enviado com sucesso!");
-            fecharPopup();
-        }
-
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -1,70 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeHer - Cadastro</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <main class="pagina-cadastro">
 
-        <!-- Botão voltar -->
         <div class="voltar">
-            <a href="pagina_inicial.html">←</a>
+            <a href="pagina_inicial.html">
+                ←
+            </a>
         </div>
 
-        <!-- Foto -->
         <section class="cabecalho-cadastro">
-            <img src="C:\Users\Aluno\OneDrive\Documentos\leticia_safe_her_uc7\img\safe-her3.png" alt="Perfil" class="foto-perfil">
+
+            <img
+                src="img/safe-her3.png"
+                alt="Perfil"
+                class="foto-perfil">
+
             <h1>Crie sua conta</h1>
+
             <p>Sua segurança começa aqui</p>
 
         </section>
 
-        <!-- Formulário -->
-        <form class="form-cadastro">
+        <form
+            class="form-cadastro" id="formCadastro">
+
             <input
                 type="text"
+                id="nome"
                 placeholder="Nome Completo"
                 required>
 
             <input
                 type="email"
+                id="emailCadastro"
                 placeholder="Digite seu email"
                 required>
 
             <input
                 type="password"
+                id="senhaCadastro"
                 placeholder="Digite sua senha"
                 required>
 
             <input
                 type="password"
+                id="confirmarSenha"
                 placeholder="Confirme sua senha"
                 required>
 
             <input
                 type="tel"
+                id="telefone"
                 placeholder="Digite seu telefone"
                 required>
 
             <div class="termos">
-                <input type="checkbox" required>
-                <label>
+
+                <input
+                    type="checkbox"
+                    id="aceiteTermos"
+                    required>
+
+                <label for="aceiteTermos">
+
                     Eu concordo com os
-                    <a href="#">Termos de Uso</a>
+
+                    <a href="termos.html">
+                        Termos de Uso
+                    </a>
+
                     e
-                    <a href="#">Política de Privacidade</a>
+
+                    <a href="privacidade.html">
+                        Política de Privacidade
+                    </a>
+
                 </label>
+
             </div>
 
             <div class="area-botao">
-                <button type="submit" class="btn-cadastro">
+
+                <button
+                    type="submit"
+                    class="btn-cadastro">
+                <a href="pagina_sos.html">
                     CRIAR CONTA
+                    </a>
                 </button>
+
             </div>
+
         </form>
 
         <div class="separador">
@@ -72,19 +109,35 @@
         </div>
 
         <div class="google-login">
-            <button type="button">
-                Entrar com o Google
+
+            <button
+                type="button"
+                id="btnGoogleCadastro">
+
+                Entrar com Google
+
             </button>
+
         </div>
 
         <div class="login-link">
+
             <p>
+
                 Já possui conta?
-                <a href="pagina_login.html">Entrar</a>
+
+                <a href="pagina_login.html">
+                    Entrar
+                </a>
+
             </p>
 
         </div>
+
     </main>
 
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>

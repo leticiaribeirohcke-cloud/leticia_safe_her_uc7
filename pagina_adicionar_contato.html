@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer - Adicionar Contato</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="pagina-cadastro">
+
+        <div class="voltar">
+
+            <a href="pagina_contatos.html">
+                ←
+            </a>
+
+        </div>
+
+        <section class="cabecalho-cadastro">
+
+            <h1>Adicionar Contato</h1>
+
+            <p>
+                Cadastre um contato de confiança
+            </p>
+
+        </section>
+
+        <form
+            id="formContato"
+            class="form-cadastro">
+
+            <input
+                type="text"
+                id="nomeContato"
+                placeholder="Nome do contato"
+                required>
+
+            <input
+                type="tel"
+                id="telefoneContato"
+                placeholder="Telefone"
+                required>
+
+            <input
+                type="email"
+                id="emailContato"
+                placeholder="Email (opcional)">
+
+            <div class="area-botao">
+
+                <button
+                    type="submit"
+                    class="btn-cadastro">
+
+                    SALVAR CONTATO
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
