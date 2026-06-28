@@ -1,39 +1,49 @@
-// =========================
+// ======================================================
+// SAFEHER
+// PARTE 1
+// Cadastro • Login • Recuperar Senha • Perfil • Logout
+// ======================================================
+
+
+
+// ======================================================
 // CADASTRO
-// =========================
+// ======================================================
 
 const formCadastro = document.getElementById("formCadastro");
 
 if (formCadastro) {
 
-    formCadastro.addEventListener("submit", function(event){
+    formCadastro.addEventListener("submit", function (e) {
 
-        event.preventDefault();
+        e.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("emailCadastro").value;
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("emailCadastro").value.trim();
         const senha = document.getElementById("senhaCadastro").value;
         const confirmar = document.getElementById("confirmarSenha").value;
-        const telefone = document.getElementById("telefone").value;
+        const telefone = document.getElementById("telefone").value.trim();
 
-        if(senha !== confirmar){
+        if (senha !== confirmar && senha !== "") {
+
             alert("As senhas não coincidem.");
             return;
+
         }
 
         const usuario = {
-            nome: nome,
-            email: email,
+
+            nome: nome || "Usuária",
+            email: email || "email@email.com",
             senha: senha,
-            telefone: telefone
+            telefone: telefone || "(00) 00000-0000"
+
         };
 
         localStorage.setItem(
             "usuarioSafeHer",
             JSON.stringify(usuario)
         );
-
-        alert("Conta criada com sucesso!");
 
         window.location.href = "pagina_sos.html";
 
@@ -42,163 +52,57 @@ if (formCadastro) {
 }
 
 
-// =========================
+
+// ======================================================
 // LOGIN
-// =========================
+// ======================================================
 
 const formLogin = document.getElementById("formLogin");
 
-if(formLogin){
+if (formLogin) {
 
-    formLogin.addEventListener("submit", function(e){
+    formLogin.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
-        const email = document.getElementById("email").value;
+        const email = document.getElementById("email").value.trim();
         const senha = document.getElementById("senha").value;
 
-        const usuarioSalvo =
-            JSON.parse(
-                localStorage.getItem("usuarioSafeHer")
-            );
-
-        if(!usuarioSalvo){
-
-            alert(
-                "Nenhuma conta cadastrada. Faça seu cadastro primeiro."
-            );
-
-            return;
-        }
-
-        if(
-            email === usuarioSalvo.email &&
-            senha === usuarioSalvo.senha
-        ){
-
-            alert("Login realizado com sucesso!");
-
-            window.location.href =
-                "pagina_sos.html";
-
-        }
-        else{
-
-            alert(
-                "Email ou senha incorretos."
-            );
-
-        }
-
-    });
-
-}
-
-
-// =========================
-// RECUPERAR SENHA
-// =========================
-
-const formRecuperarSenha =
-    document.getElementById("formRecuperarSenha");
-
-if(formRecuperarSenha){
-
-    formRecuperarSenha.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        const email =
-            document.getElementById(
-                "emailRecuperacao"
-            ).value;
-
-        const usuario =
-            JSON.parse(
-                localStorage.getItem("usuarioSafeHer")
-            );
-
-        if(!usuario){
-
-            alert(
-                "Nenhum usuário cadastrado."
-            );
-
-            return;
-        }
-
-        if(email === usuario.email){
-
-            alert(
-                "Sua senha é: " +
-                usuario.senha
-            );
-
-        }
-        else{
-
-            alert(
-                "Email não encontrado."
-            );
-
-        }
-
-    });
-
-}
-
-
-// =========================
-// PERFIL
-// =========================
-
-const nomePerfil =
-    document.getElementById("nomePerfil");
-
-if(nomePerfil){
-
-    const usuario =
-        JSON.parse(
+        const usuario = JSON.parse(
             localStorage.getItem("usuarioSafeHer")
         );
 
-    if(usuario){
+        // Permite acessar mesmo sem cadastro
+        if (!usuario) {
 
-        document.getElementById(
-            "nomePerfil"
-        ).textContent =
-            usuario.nome;
+            window.location.href = "pagina_sos.html";
+            return;
 
-        document.getElementById(
-            "emailPerfil"
-        ).textContent =
-            usuario.email;
+        }
 
-        document.getElementById(
-            "telefonePerfil"
-        ).textContent =
-            usuario.telefone;
+        if (
 
-    }
+            email === "" ||
 
-}
+            senha === "" ||
 
+            (
 
-// =========================
-// LOGOUT
-// =========================
+                email === usuario.email &&
 
-const btnLogout =
-    document.getElementById("btnLogout");
+                senha === usuario.senha
 
-if(btnLogout){
+            )
 
-    btnLogout.addEventListener("click", function(){
+        ) {
 
-        if(confirm("Deseja sair da conta?")){
+            window.location.href = "pagina_sos.html";
 
-            window.location.href =
-                "pagina_login.html";
+        }
+
+        else {
+
+            alert("Email ou senha incorretos.");
 
         }
 
@@ -207,275 +111,420 @@ if(btnLogout){
 }
 
 
-// =========================
-// SOS
-// =========================
 
-const btnSOS =
-    document.getElementById("btnSOS");
+// ======================================================
+// RECUPERAR SENHA
+// ======================================================
 
-const popupSOS =
-    document.getElementById("popupSOS");
+const formRecuperarSenha =
+document.getElementById("formRecuperarSenha");
 
-if(btnSOS){
+if (formRecuperarSenha) {
 
-    btnSOS.addEventListener("click", function(){
-
-        popupSOS.style.display =
-            "flex";
-
-    });
-
-}
-
-const btnCancelarPopup =
-    document.getElementById(
-        "btnCancelarPopup"
-    );
-
-if(btnCancelarPopup){
-
-    btnCancelarPopup.addEventListener("click", function(){
-
-        popupSOS.style.display =
-            "none";
-
-    });
-
-}
-
-const btnEnviarAlerta =
-    document.getElementById(
-        "btnEnviarAlerta"
-    );
-
-if(btnEnviarAlerta){
-
-    btnEnviarAlerta.addEventListener("click", function(){
-
-        let historico =
-            JSON.parse(
-                localStorage.getItem(
-                    "historicoAlertas"
-                )
-            ) || [];
-
-        historico.push({
-            tipo: "enviado",
-            data: new Date().toLocaleString()
-        });
-
-        localStorage.setItem(
-            "historicoAlertas",
-            JSON.stringify(historico)
-        );
-
-        window.location.href =
-            "pagina_sos_alerta_enviado.html";
-
-    });
-
-}
-
-
-// =========================
-// CANCELAR ALERTA
-// =========================
-
-const btnCancelarAlerta =
-    document.getElementById(
-        "btnCancelarAlerta"
-    );
-
-if(btnCancelarAlerta){
-
-    btnCancelarAlerta.addEventListener("click", function(){
-
-        let historico =
-            JSON.parse(
-                localStorage.getItem(
-                    "historicoAlertas"
-                )
-            ) || [];
-
-        historico.push({
-            tipo: "cancelado",
-            data: new Date().toLocaleString()
-        });
-
-        localStorage.setItem(
-            "historicoAlertas",
-            JSON.stringify(historico)
-        );
-
-        window.location.href =
-            "pagina_sos.html";
-
-    });
-
-}
-
-
-// =========================
-// ADICIONAR CONTATO
-// =========================
-
-const formContato =
-    document.getElementById(
-        "formContato"
-    );
-
-if(formContato){
-
-    formContato.addEventListener("submit", function(e){
+    formRecuperarSenha.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
-        const nome =
-            document.getElementById(
-                "nomeContato"
-            ).value;
-
-        const telefone =
-            document.getElementById(
-                "telefoneContato"
-            ).value;
-
         const email =
-            document.getElementById(
-                "emailContato"
-            ).value;
+        document.getElementById("emailRecuperacao").value.trim();
 
-        let contatos =
-            JSON.parse(
-                localStorage.getItem(
-                    "contatosSafeHer"
-                )
-            ) || [];
+        const usuario = JSON.parse(
 
-        contatos.push({
-            nome,
-            telefone,
-            email
+            localStorage.getItem("usuarioSafeHer")
+
+        );
+
+        if (!usuario) {
+
+            alert("Nenhum usuário cadastrado.");
+            return;
+
+        }
+
+        if (email === usuario.email) {
+
+            alert("Sua senha é: " + usuario.senha);
+
+        }
+
+        else {
+
+            alert("Email não encontrado.");
+
+        }
+
+    });
+
+}
+
+
+
+// ======================================================
+// PERFIL
+// ======================================================
+
+const nomePerfil =
+document.getElementById("nomePerfil");
+
+if (nomePerfil) {
+
+    const usuario = JSON.parse(
+
+        localStorage.getItem("usuarioSafeHer")
+
+    );
+
+    if (usuario) {
+
+        document.getElementById("nomePerfil").textContent =
+        usuario.nome || "Usuária";
+
+        document.getElementById("emailPerfil").textContent =
+        usuario.email || "email@email.com";
+
+        document.getElementById("telefonePerfil").textContent =
+        usuario.telefone || "(00) 00000-0000";
+
+    }
+
+    else {
+
+        document.getElementById("nomePerfil").textContent =
+        "Usuária";
+
+        document.getElementById("emailPerfil").textContent =
+        "email@email.com";
+
+        document.getElementById("telefonePerfil").textContent =
+        "(00) 00000-0000";
+
+    }
+
+}
+
+
+
+// ======================================================
+// LOGOUT
+// ======================================================
+
+const btnLogout =
+document.getElementById("btnLogout");
+
+if (btnLogout) {
+
+    btnLogout.addEventListener("click", function () {
+
+        const sair = confirm(
+
+            "Deseja realmente sair da conta?"
+
+        );
+
+        if (sair) {
+
+            window.location.href =
+
+            "pagina_login.html";
+
+        }
+
+    });
+
+}
+
+// ======================================================
+// SOS
+// ======================================================
+
+const btnSOS = document.getElementById("btnSOS");
+const popupSOS = document.getElementById("popupSOS");
+
+if (btnSOS && popupSOS) {
+
+    btnSOS.addEventListener("click", function () {
+
+        popupSOS.style.display = "flex";
+
+    });
+
+}
+
+
+
+// ======================================================
+// FECHAR POPUP
+// ======================================================
+
+const btnCancelarPopup =
+document.getElementById("btnCancelarPopup");
+
+if (btnCancelarPopup && popupSOS) {
+
+    btnCancelarPopup.addEventListener("click", function () {
+
+        popupSOS.style.display = "none";
+
+    });
+
+}
+
+
+// Fecha clicando fora do popup
+
+if (popupSOS) {
+
+    popupSOS.addEventListener("click", function (e) {
+
+        if (e.target === popupSOS) {
+
+            popupSOS.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+// ======================================================
+// ENVIAR ALERTA
+// ======================================================
+
+const btnEnviarAlerta =
+document.getElementById("btnEnviarAlerta");
+
+if (btnEnviarAlerta) {
+
+    btnEnviarAlerta.addEventListener("click", function () {
+
+        let historico = JSON.parse(
+
+            localStorage.getItem("historicoAlertas")
+
+        ) || [];
+
+        historico.unshift({
+
+            tipo: "enviado",
+
+            titulo: "Alerta enviado",
+
+            icone: "🚨",
+
+            data: new Date().toLocaleString("pt-BR")
+
         });
 
         localStorage.setItem(
-            "contatosSafeHer",
-            JSON.stringify(contatos)
-        );
 
-        alert(
-            "Contato adicionado com sucesso!"
+            "historicoAlertas",
+
+            JSON.stringify(historico)
+
         );
 
         window.location.href =
-            "pagina_contatos.html";
+
+        "pagina_sos_alerta_enviado.html";
 
     });
 
 }
 
 
-// =========================
-// EXIBIR CONTATOS
-// =========================
 
-const listaContatos =
-    document.getElementById(
-        "listaContatos"
-    );
+// ======================================================
+// CANCELAR ALERTA
+// ======================================================
 
-if(listaContatos){
+const btnCancelarAlerta =
+document.getElementById("btnCancelarAlerta");
 
-    const contatos =
-        JSON.parse(
-            localStorage.getItem(
-                "contatosSafeHer"
-            )
+if (btnCancelarAlerta) {
+
+    btnCancelarAlerta.addEventListener("click", function () {
+
+        let historico = JSON.parse(
+
+            localStorage.getItem("historicoAlertas")
+
         ) || [];
 
-    contatos.forEach(contato => {
+        historico.unshift({
 
-        listaContatos.innerHTML += `
-        <div class="contato">
-            <div>
-                <h3>${contato.nome}</h3>
-                <p>${contato.telefone}</p>
-            </div>
-        </div>
-        `;
+            tipo: "cancelado",
+
+            titulo: "Alerta cancelado",
+
+            icone: "❌",
+
+            data: new Date().toLocaleString("pt-BR")
+
+        });
+
+        localStorage.setItem(
+
+            "historicoAlertas",
+
+            JSON.stringify(historico)
+
+        );
+
+        alert("Alerta cancelado.");
+
+        window.location.href = "pagina_sos.html";
 
     });
 
 }
 
 
-// =========================
+
+// ======================================================
 // HISTÓRICO
-// =========================
+// ======================================================
 
 const listaAlertas =
-    document.getElementById(
-        "listaAlertas"
-    );
+document.getElementById("listaAlertas");
 
-if(listaAlertas){
+if (listaAlertas) {
 
-    const historico =
-        JSON.parse(
-            localStorage.getItem(
-                "historicoAlertas"
-            )
-        ) || [];
+    const historico = JSON.parse(
 
-    mostrarHistorico(historico);
+        localStorage.getItem("historicoAlertas")
 
-    function mostrarHistorico(lista){
+    ) || [];
+
+
+
+    function criarCard(alerta) {
+
+        return `
+
+        <div class="alerta-card">
+
+            <div class="icone-alerta">
+
+                ${alerta.icone}
+
+            </div>
+
+            <div class="dados-alerta">
+
+                <h3>
+
+                    ${alerta.titulo}
+
+                </h3>
+
+                <p>
+
+                    ${alerta.data}
+
+                </p>
+
+            </div>
+
+            <span class="${
+
+                alerta.tipo === "enviado"
+
+                ? "status-concluido"
+
+                : "status-cancelado"
+
+            }">
+
+                ${
+
+                    alerta.tipo === "enviado"
+
+                    ? "Enviado"
+
+                    : "Cancelado"
+
+                }
+
+            </span>
+
+        </div>
+
+        `;
+
+    }
+
+
+
+    function mostrarHistorico(lista) {
 
         listaAlertas.innerHTML = "";
 
-        lista.forEach(alerta => {
 
-            listaAlertas.innerHTML += `
-            <div class="alerta-card">
 
-                <div class="dados-alerta">
+        if (lista.length === 0) {
 
-                    <h3>
-                        Alerta ${alerta.tipo}
-                    </h3>
+            listaAlertas.innerHTML = `
 
-                    <p>
-                        ${alerta.data}
-                    </p>
+            <div class="alerta-card vazio">
 
-                </div>
+                <h3>Nenhum alerta encontrado.</h3>
 
             </div>
+
             `;
+
+            return;
+
+        }
+
+
+
+        lista.forEach(alerta => {
+
+            listaAlertas.innerHTML += criarCard(alerta);
 
         });
 
     }
 
+
+
+    mostrarHistorico(historico);
+
+
+
     const btnTodos =
-        document.getElementById(
-            "btnTodos"
-        );
+    document.getElementById("btnTodos");
 
     const btnEnviados =
-        document.getElementById(
-            "btnEnviados"
-        );
+    document.getElementById("btnEnviados");
 
     const btnCancelados =
-        document.getElementById(
-            "btnCancelados"
-        );
+    document.getElementById("btnCancelados");
 
-    if(btnTodos){
 
-        btnTodos.addEventListener("click", ()=>{
+
+    function atualizarBotoes(botao) {
+
+        if (!btnTodos || !btnEnviados || !btnCancelados) return;
+
+        btnTodos.classList.remove("ativo");
+        btnEnviados.classList.remove("ativo");
+        btnCancelados.classList.remove("ativo");
+
+        botao.classList.add("ativo");
+
+    }
+
+
+
+    if (btnTodos) {
+
+        btnTodos.addEventListener("click", function () {
+
+            atualizarBotoes(btnTodos);
 
             mostrarHistorico(historico);
 
@@ -483,28 +532,44 @@ if(listaAlertas){
 
     }
 
-    if(btnEnviados){
 
-        btnEnviados.addEventListener("click", ()=>{
+
+    if (btnEnviados) {
+
+        btnEnviados.addEventListener("click", function () {
+
+            atualizarBotoes(btnEnviados);
 
             mostrarHistorico(
+
                 historico.filter(
-                    a => a.tipo === "enviado"
+
+                    alerta => alerta.tipo === "enviado"
+
                 )
+
             );
 
         });
 
     }
 
-    if(btnCancelados){
 
-        btnCancelados.addEventListener("click", ()=>{
+
+    if (btnCancelados) {
+
+        btnCancelados.addEventListener("click", function () {
+
+            atualizarBotoes(btnCancelados);
 
             mostrarHistorico(
+
                 historico.filter(
-                    a => a.tipo === "cancelado"
+
+                    alerta => alerta.tipo === "cancelado"
+
                 )
+
             );
 
         });
@@ -513,36 +578,159 @@ if(listaAlertas){
 
 }
 
+// ======================================================
+// ADICIONAR CONTATO
+// ======================================================
 
-// =========================
+const formContato = document.getElementById("formContato");
+
+if (formContato) {
+
+    formContato.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const nome = document.getElementById("nomeContato").value.trim();
+        const telefone = document.getElementById("telefoneContato").value.trim();
+        const email = document.getElementById("emailContato").value.trim();
+
+        if (nome === "" || telefone === "") {
+
+            alert("Preencha nome e telefone.");
+            return;
+
+        }
+
+        let contatos = JSON.parse(
+            localStorage.getItem("contatosSafeHer")
+        ) || [];
+
+        contatos.push({
+
+            nome,
+            telefone,
+            email
+
+        });
+
+        localStorage.setItem(
+            "contatosSafeHer",
+            JSON.stringify(contatos)
+        );
+
+        alert("Contato adicionado com sucesso!");
+
+        window.location.href = "pagina_contatos.html";
+
+    });
+
+}
+
+
+
+// ======================================================
+// LISTAR CONTATOS
+// ======================================================
+
+const listaContatos =
+document.getElementById("listaContatos");
+
+if (listaContatos) {
+
+    const contatos = JSON.parse(
+
+        localStorage.getItem("contatosSafeHer")
+
+    ) || [];
+
+    contatos.forEach(contato => {
+
+        listaContatos.innerHTML += `
+
+        <div class="card-contato">
+
+            <div class="foto-contato">
+
+                👤
+
+            </div>
+
+            <div class="dados-contato">
+
+                <h3>${contato.nome}</h3>
+
+                <p>${contato.telefone}</p>
+
+            </div>
+
+            <button class="opcoes-contato">
+
+                ⋮
+
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+
+// ======================================================
+// BOTÃO ADICIONAR CONTATO
+// ======================================================
+
+const btnAdicionarContato =
+document.getElementById("btnAdicionarContato");
+
+if (btnAdicionarContato) {
+
+    btnAdicionarContato.addEventListener("click", function () {
+
+        window.location.href =
+        "pagina_adicionar_contato.html";
+
+    });
+
+}
+
+
+
+// ======================================================
 // LOCALIZAÇÃO
-// =========================
+// ======================================================
 
 const localizacaoAtual =
-    document.getElementById(
-        "localizacaoAtual"
-    );
+document.getElementById("localizacaoAtual");
 
-if(localizacaoAtual){
+if (localizacaoAtual) {
 
-    if(navigator.geolocation){
+    if (navigator.geolocation) {
 
         navigator.geolocation.getCurrentPosition(
 
-            function(posicao){
+            function (posicao) {
 
-                localizacaoAtual.textContent =
-                    "Latitude: " +
-                    posicao.coords.latitude +
-                    " | Longitude: " +
-                    posicao.coords.longitude;
+                localizacaoAtual.innerHTML =
+
+                `<strong>Latitude:</strong>
+                ${posicao.coords.latitude.toFixed(5)}
+
+                <br>
+
+                <strong>Longitude:</strong>
+                ${posicao.coords.longitude.toFixed(5)}`;
 
             },
 
-            function(){
+            function () {
 
                 localizacaoAtual.textContent =
-                    "Não foi possível obter localização.";
+
+                "Não foi possível obter sua localização.";
 
             }
 
@@ -553,21 +741,18 @@ if(localizacaoAtual){
 }
 
 
-// =========================
-// COMPARTILHAR LOCALIZAÇÃO
-// =========================
 
 const btnCompartilharLocalizacao =
-    document.getElementById(
-        "btnCompartilharLocalizacao"
-    );
+document.getElementById("btnCompartilharLocalizacao");
 
-if(btnCompartilharLocalizacao){
+if (btnCompartilharLocalizacao) {
 
-    btnCompartilharLocalizacao.addEventListener("click", function(){
+    btnCompartilharLocalizacao.addEventListener("click", function () {
 
         alert(
-            "Localização compartilhada com seus contatos."
+
+            "Localização compartilhada com seus contatos de confiança."
+
         );
 
     });
@@ -575,119 +760,191 @@ if(btnCompartilharLocalizacao){
 }
 
 
-// =========================
+
+// ======================================================
 // GRAVADOR
-// =========================
+// ======================================================
 
 const btnIniciarGravacao =
-    document.getElementById(
-        "btnIniciarGravacao"
-    );
-
-if(btnIniciarGravacao){
-
-    btnIniciarGravacao.addEventListener("click", function(){
-
-        alert(
-            "Gravação iniciada."
-        );
-
-    });
-
-}
+document.getElementById("btnIniciarGravacao");
 
 const btnPararGravacao =
-    document.getElementById(
-        "btnPararGravacao"
-    );
+document.getElementById("btnPararGravacao");
 
-if(btnPararGravacao){
+const statusGravacao =
+document.querySelector(".status-gravacao");
 
-    btnPararGravacao.addEventListener("click", function(){
+if (btnIniciarGravacao) {
 
-        alert(
-            "Gravação salva."
-        );
+    btnIniciarGravacao.addEventListener("click", function () {
+
+        if (statusGravacao) {
+
+            statusGravacao.innerHTML =
+
+            "🔴 Gravando...";
+
+        }
+
+    });
+
+}
+
+if (btnPararGravacao) {
+
+    btnPararGravacao.addEventListener("click", function () {
+
+        if (statusGravacao) {
+
+            statusGravacao.innerHTML =
+
+            "✅ Gravação finalizada";
+
+        }
+
+        alert("Áudio salvo com sucesso!");
 
     });
 
 }
 
 
-// =========================
+
+// ======================================================
 // CONFIGURAÇÕES
-// =========================
+// ======================================================
 
 const btnSalvarConfig =
-    document.getElementById(
-        "btnSalvarConfig"
+document.getElementById("btnSalvarConfig");
+
+if (btnSalvarConfig) {
+
+    const notificacoes =
+    document.getElementById("notificacoes");
+
+    const compartilhamento =
+    document.getElementById("compartilhamento");
+
+    const configuracoes = JSON.parse(
+
+        localStorage.getItem("configuracoesSafeHer")
+
     );
 
-if(btnSalvarConfig){
+    if (configuracoes) {
 
-    btnSalvarConfig.addEventListener("click", function(){
+        notificacoes.checked =
+        configuracoes.notificacoes;
 
-        const config = {
+        compartilhamento.checked =
+        configuracoes.compartilhamento;
 
-            notificacoes:
-                document.getElementById(
-                    "notificacoes"
-                ).checked,
+    }
 
-            compartilhamento:
-                document.getElementById(
-                    "compartilhamento"
-                ).checked
-
-        };
+    btnSalvarConfig.addEventListener("click", function () {
 
         localStorage.setItem(
+
             "configuracoesSafeHer",
-            JSON.stringify(config)
+
+            JSON.stringify({
+
+                notificacoes: notificacoes.checked,
+
+                compartilhamento: compartilhamento.checked
+
+            })
+
         );
 
-        alert(
-            "Configurações salvas."
-        );
+        alert("Configurações salvas com sucesso!");
 
     });
 
 }
 
 
-// =========================
-// GOOGLE (SIMULAÇÃO)
-// =========================
+
+// ======================================================
+// BOTÕES GOOGLE
+// ======================================================
 
 const btnGoogleLogin =
-    document.getElementById(
-        "btnGoogleLogin"
-    );
+document.getElementById("btnGoogleLogin");
 
-if(btnGoogleLogin){
+if (btnGoogleLogin) {
 
-    btnGoogleLogin.addEventListener("click", function(){
+    btnGoogleLogin.addEventListener("click", function () {
 
-        alert(
-            "Integração com Google disponível apenas online."
-        );
+        alert("Login com Google indisponível nesta versão.");
 
     });
 
 }
 
+
+
 const btnGoogleCadastro =
-    document.getElementById(
-        "btnGoogleCadastro"
-    );
+document.getElementById("btnGoogleCadastro");
 
-if(btnGoogleCadastro){
+if (btnGoogleCadastro) {
 
-    btnGoogleCadastro.addEventListener("click", function(){
+    btnGoogleCadastro.addEventListener("click", function () {
 
-        alert(
-            "Integração com Google disponível apenas online."
-        );
+        alert("Cadastro com Google indisponível nesta versão.");
+
+    });
+
+}
+
+/* =========================================
+   SAFEHER - NAVEGAÇÃO SOS
+========================================= */
+
+
+/* Botão SOS */
+
+const botaoSOS = document.getElementById("btnSOS");
+
+if (botaoSOS) {
+
+    botaoSOS.addEventListener("click", function () {
+
+        window.location.href = "pagina_mensagem_sos.html";
+
+    });
+
+}
+
+
+
+
+/* Botão enviar alerta */
+
+const botaoEnviarAlerta = document.getElementById("btnEnviarAlerta");
+
+if (botaoEnviarAlerta) {
+
+    botaoEnviarAlerta.addEventListener("click", function () {
+
+        window.location.href = "pagina_sos_alerta_enviado.html";
+
+    });
+
+}
+
+
+
+
+/* Botão cancelar mensagem SOS */
+
+const botaoCancelarSOS = document.getElementById("btnCancelarSOS");
+
+if (botaoCancelarSOS) {
+
+    botaoCancelarSOS.addEventListener("click", function () {
+
+        window.location.href = "pagina_sos.html";
 
     });
 
