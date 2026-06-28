@@ -2,56 +2,105 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeHer - Perfil</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SafeHer - Meu Perfil</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-perfil">
+<main class="pagina-perfil">
 
-        <a href="pagina_sos.html" class="voltar">
-            ←
-        </a>
+    <a href="pagina_sos.html" class="voltar">
+        ← Voltar
+    </a>
 
-        <h1>Meu Perfil</h1>
+    <section class="perfil-container">
 
         <div class="perfil-card">
 
-            <img
-                id="fotoPerfilExibicao"
-                src="img/safe-her3.png"
-                alt="Foto de Perfil"
-                class="foto-perfil">
+            <div class="foto-perfil-area">
 
-            <h2 id="nomePerfil">
-                Usuária
-            </h2>
+                <img
+                    src="img/safe-her3.png"
+                    alt="Foto de Perfil"
+                    class="foto-perfil">
 
-            <p id="emailPerfil">
-                email@email.com
-            </p>
+            </div>
 
-            <p id="telefonePerfil">
-                (00) 00000-0000
-            </p>
+            <h1>Meu Perfil</h1>
+
+            <div class="dados-perfil">
+
+                <div class="campo-perfil">
+
+                    <span class="titulo-campo">
+                        Nome
+                    </span>
+
+                    <p id="nomePerfil">
+                        Usuária
+                    </p>
+
+                </div>
+
+                <div class="campo-perfil">
+
+                    <span class="titulo-campo">
+                        E-mail
+                    </span>
+
+                    <p id="emailPerfil">
+                        email@email.com
+                    </p>
+
+                </div>
+
+                <div class="campo-perfil">
+
+                    <span class="titulo-campo">
+                        Telefone
+                    </span>
+
+                    <p id="telefonePerfil">
+                        (00) 00000-0000
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn-editar"
+                type="button">
+
+                EDITAR PERFIL
+
+            </button>
+
+            <button
+                id="btnLogout"
+                class="btn-sair"
+                type="button">
+
+                SAIR DA CONTA
+                
+            </button>
 
         </div>
 
-        <button
-            id="btnLogout"
-            class="btn-cadastro">
+    </section>
 
-            SAIR DA CONTA
+</main>
 
-        </button>
-
-    </main>
-
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

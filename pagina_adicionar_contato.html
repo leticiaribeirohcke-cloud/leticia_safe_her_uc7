@@ -2,73 +2,71 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Adicionar Contato</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-cadastro">
+<main class="pagina-adicionar-contato">
 
-        <div class="voltar">
+    <a href="pagina_contatos.html" class="voltar">
 
-            <a href="pagina_contatos.html">
-                ←
-            </a>
+        ←
 
-        </div>
+    </a>
 
-        <section class="cabecalho-cadastro">
+    <section class="cabecalho-contato">
 
-            <h1>Adicionar Contato</h1>
+        <h1>Adicionar Contato</h1>
 
-            <p>
-                Cadastre um contato de confiança
-            </p>
+        <p>
 
-        </section>
+            Cadastre um contato de confiança.
 
-        <form
-            id="formContato"
-            class="form-cadastro">
+        </p>
 
-            <input
-                type="text"
-                id="nomeContato"
-                placeholder="Nome do contato"
-                required>
+    </section>
 
-            <input
-                type="tel"
-                id="telefoneContato"
-                placeholder="Telefone"
-                required>
+    <form
+        id="formContato"
+        class="form-cadastro">
 
-            <input
-                type="email"
-                id="emailContato"
-                placeholder="Email (opcional)">
+        <input
+            type="text"
+            id="nomeContato"
+            placeholder="Nome do contato">
 
-            <div class="area-botao">
+        <input
+            type="tel"
+            id="telefoneContato"
+            placeholder="Telefone">
 
-                <button
-                    type="submit"
-                    class="btn-cadastro">
+        <input
+            type="email"
+            id="emailContato"
+            placeholder="E-mail (opcional)">
 
-                    SALVAR CONTATO
+        <button
+            type="submit"
+            class="btn-cadastro">
 
-                </button>
+            SALVAR CONTATO
 
-            </div>
+        </button>
 
-        </form>
+    </form>
 
-    </main>
+</main>
 
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

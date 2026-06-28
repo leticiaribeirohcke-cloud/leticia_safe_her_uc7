@@ -2,40 +2,67 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Localização</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-contatos">
+    <main class="pagina-localizacao">
+
+        <!-- Botão voltar -->
 
         <a href="pagina_sos.html" class="voltar">
-            ←
+
+            ← Voltar
+
         </a>
 
-        <h1>Compartilhar Localização</h1>
+        <!-- Cabeçalho -->
 
-        <div class="contato">
+        <section class="cabecalho-localizacao">
 
-            <div>
+            <h1>Compartilhar Localização</h1>
 
-                <h3>Sua localização atual</h3>
+            <p>
+                Compartilhe sua localização atual com seus contatos de confiança.
+            </p>
 
-                <p id="localizacaoAtual">
-                    Obtendo localização...
-                </p>
+        </section>
+
+        <!-- Card -->
+
+        <section class="card-localizacao">
+
+            <div class="icone-localizacao">
+
+                📍
 
             </div>
 
-        </div>
+            <h2>Sua localização atual</h2>
+
+            <p id="localizacaoAtual">
+
+                Obtendo localização...
+
+            </p>
+
+        </section>
+
+        <!-- Botão -->
 
         <button
             id="btnCompartilharLocalizacao"
-            class="btn-adicionar">
+            class="btn-compartilhar"
+            type="button">
 
             COMPARTILHAR LOCALIZAÇÃO
 

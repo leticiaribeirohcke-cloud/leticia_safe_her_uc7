@@ -2,87 +2,87 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Cadastro</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
     <main class="pagina-cadastro">
 
+        <!-- Voltar -->
         <div class="voltar">
-            <a href="pagina_inicial.html">
-                ←
-            </a>
+            <a href="pagina_inicial.html">←</a>
         </div>
 
+        <!-- Cabeçalho -->
         <section class="cabecalho-cadastro">
 
             <img
                 src="img/safe-her3.png"
-                alt="Perfil"
+                alt="SafeHer"
                 class="foto-perfil">
 
             <h1>Crie sua conta</h1>
 
-            <p>Sua segurança começa aqui</p>
+            <p>Sua segurança começa aqui.</p>
 
         </section>
 
+        <!-- Formulário -->
         <form
-            class="form-cadastro" id="formCadastro">
+            id="formCadastro"
+            class="form-cadastro">
 
             <input
                 type="text"
                 id="nome"
-                placeholder="Nome Completo"
-                required>
+                placeholder="Nome completo">
 
             <input
                 type="email"
                 id="emailCadastro"
-                placeholder="Digite seu email"
-                required>
+                placeholder="Digite seu e-mail">
 
             <input
                 type="password"
                 id="senhaCadastro"
-                placeholder="Digite sua senha"
-                required>
+                placeholder="Digite sua senha">
 
             <input
                 type="password"
                 id="confirmarSenha"
-                placeholder="Confirme sua senha"
-                required>
+                placeholder="Confirme sua senha">
 
             <input
                 type="tel"
                 id="telefone"
-                placeholder="Digite seu telefone"
-                required>
+                placeholder="Telefone">
 
             <div class="termos">
 
                 <input
                     type="checkbox"
-                    id="aceiteTermos"
-                    required>
+                    id="aceiteTermos">
 
                 <label for="aceiteTermos">
 
                     Eu concordo com os
 
-                    <a href="termos.html">
+                    <a href="pagina_termos_de_uso.html">
                         Termos de Uso
                     </a>
 
-                    e
+                    e com a
 
-                    <a href="privacidade.html">
+                    <a href="pagina_politica_de_privacidade.html">
                         Política de Privacidade
                     </a>
 
@@ -92,20 +92,20 @@
 
             <div class="area-botao">
 
-                <button
-                    type="submit"
-                    class="btn-cadastro">
-                <a href="pagina_sos.html">
+                <a href="pagina_sos.html" class="btn-cadastro">
+
                     CRIAR CONTA
-                    </a>
-                </button>
+
+                </a>
 
             </div>
 
         </form>
 
         <div class="separador">
+
             <span>OU</span>
+
         </div>
 
         <div class="google-login">
@@ -114,7 +114,7 @@
                 type="button"
                 id="btnGoogleCadastro">
 
-                Entrar com Google
+                Cadastrar com Google
 
             </button>
 
@@ -127,7 +127,9 @@
                 Já possui conta?
 
                 <a href="pagina_login.html">
+
                     Entrar
+
                 </a>
 
             </p>

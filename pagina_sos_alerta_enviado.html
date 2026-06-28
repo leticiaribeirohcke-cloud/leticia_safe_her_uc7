@@ -2,74 +2,86 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeHer - Alerta Enviado</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SafeHer - Alerta Enviado</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-alerta">
+<main class="pagina-alerta">
 
-        <section class="alerta-enviado">
+<div class="alerta-enviado">
 
-            <div class="icone-alerta">
-                🔔
-            </div>
+<div class="check">
 
-            <h1>Alerta enviado!</h1>
+✔
 
-            <p>
-                Seus contatos foram notificados
-                com sua localização em tempo real.
-            </p>
+</div>
 
-            <div class="localizacao-card">
+<h1>
 
-                <div class="info-localizacao">
+ALERTA ENVIADO
 
-                    <h3>📍 Localização atual</h3>
+</h1>
 
-                    <p>Rua das Flores, 123</p>
+<p>
 
-                    <p>Centro - São Paulo/SP</p>
+Seus contatos foram notificados e receberam sua localização.
 
-                </div>
+</p>
 
-                <div class="mapa">
-                    📍
-                </div>
+<div class="localizacao-card">
 
-            </div>
+<div>
 
-            <a href="tel:190">
+<h3>
 
-                <button
-                    type="button"
-                    class="btn-ligar">
+📍 Localização
 
-                    📞 LIGAR 190
+</h3>
 
-                </button>
+<p id="localizacaoAtual">
 
-            </a>
+Obtendo localização...
 
-            <button
-                type="button"
-                class="btn-cancelar-alerta"
-                id="btnCancelarAlerta">
+</p>
 
-                CANCELAR
+</div>
 
-            </button>
+</div>
 
-        </section>
+<button
+class="btn-ligar"
+onclick="window.location.href='tel:190'">
 
-    </main>
+LIGAR PARA A POLÍCIA
 
-    <script src="js/script.js"></script>
+</button>
+
+<a href="pagina_sos.html">
+<button
+id="btnCancelarAlerta"
+class="btn-cancelar-alerta">
+
+VOLTAR
+
+</button>
+</a>
+
+</div>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 

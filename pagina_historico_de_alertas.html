@@ -2,60 +2,311 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Histórico de Alertas</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <main class="pagina-historico">
 
-        <a
-            href="pagina_sos.html"
-            class="voltar">
+<main class="pagina-historico">
 
-            ←
 
-        </a>
+    <!-- Botão voltar -->
 
-        <h1>Histórico de Alertas</h1>
+    <a href="pagina_sos.html" class="voltar">
 
-        <section class="filtros">
+        ←
 
-            <button
-                class="ativo"
-                id="btnTodos">
+    </a>
 
-                Todos
 
-            </button>
 
-            <button id="btnEnviados">
-                Enviados
-            </button>
 
-            <button id="btnCancelados">
-                Cancelados
-            </button>
+    <!-- Cabeçalho -->
 
-        </section>
+    <section class="cabecalho-historico">
 
-        <section
-            class="lista-alertas"
-            id="listaAlertas">
 
-        </section>
+        <h1>
 
-        <p class="observacao">
-            Os alertas são armazenados por 90 dias.
+            Histórico de Alertas
+
+        </h1>
+
+
+        <p>
+
+            Consulte todos os alertas enviados pelo aplicativo.
+
         </p>
 
-    </main>
 
-    <script src="js/script.js"></script>
+    </section>
+
+
+
+
+
+    <!-- Filtros -->
+
+    <section class="filtros">
+
+
+        <button 
+        id="btnTodos" 
+        class="ativo">
+
+            Todos
+
+        </button>
+
+
+
+        <button id="btnEnviados">
+
+            Enviados
+
+        </button>
+
+
+
+        <button id="btnCancelados">
+
+            Cancelados
+
+        </button>
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- Lista de alertas -->
+
+    <section 
+    id="listaAlertas"
+    class="lista-alertas">
+
+
+
+        <!-- ALERTA ENVIADO -->
+
+        <article class="card-alerta enviado">
+
+
+            <div class="icone-alerta">
+
+                🚨
+
+            </div>
+
+
+
+            <div class="dados-alerta">
+
+
+                <h3>
+
+                    Alerta enviado
+
+                </h3>
+
+
+
+                <p>
+
+                    📅 28/06/2026
+
+                </p>
+
+
+                <p>
+
+                    🕒 14:30
+
+                </p>
+
+
+                <p>
+
+                    📍 Localização compartilhada
+
+                </p>
+
+
+            </div>
+
+
+
+            <span class="status-alerta enviado">
+
+                Enviado
+
+            </span>
+
+
+
+        </article>
+
+
+
+
+
+
+
+        <!-- ALERTA CANCELADO -->
+
+
+        <article class="card-alerta cancelado">
+
+
+            <div class="icone-alerta">
+
+                ⚠️
+
+            </div>
+
+
+
+            <div class="dados-alerta">
+
+
+                <h3>
+
+                    Alerta cancelado
+
+                </h3>
+
+
+
+                <p>
+
+                    📅 27/06/2026
+
+                </p>
+
+
+                <p>
+
+                    🕒 19:15
+
+                </p>
+
+
+                <p>
+
+                    📍 Nenhuma localização enviada
+
+                </p>
+
+
+            </div>
+
+
+
+            <span class="status-alerta cancelado">
+
+                Cancelado
+
+            </span>
+
+
+
+        </article>
+
+
+
+
+
+
+
+        <!-- ALERTA ENVIADO -->
+
+
+        <article class="card-alerta enviado">
+
+
+            <div class="icone-alerta">
+
+                🚨
+
+            </div>
+
+
+
+            <div class="dados-alerta">
+
+
+                <h3>
+
+                    Alerta enviado
+
+                </h3>
+
+
+
+                <p>
+
+                    📅 20/06/2026
+
+                </p>
+
+
+                <p>
+
+                    🕒 08:40
+
+                </p>
+
+
+                <p>
+
+                    📍 Contatos avisados
+
+                </p>
+
+
+            </div>
+
+
+
+            <span class="status-alerta enviado">
+
+                Enviado
+
+            </span>
+
+
+
+        </article>
+
+
+
+
+    </section>
+
+
+
+</main>
+
+
+
+<script src="js/script.js"></script>
+
 
 </body>
 

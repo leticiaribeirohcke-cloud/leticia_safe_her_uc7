@@ -2,46 +2,126 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Contatos de Emergência</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-contatos">
+<main class="pagina-contatos">
 
-        <a
-            href="pagina_sos.html"
-            class="voltar">
+    <a href="pagina_sos.html" class="voltar">
 
-            ←
+        ← Voltar
 
-        </a>
+    </a>
 
-        <h1>CONTATOS DE EMERGÊNCIA</h1>
+    <h1>Contatos de Emergência</h1>
 
-        <section
-            class="lista-contatos"
-            id="listaContatos">
+    <section
+        class="lista-contatos"
+        id="listaContatos">
 
-            <!-- Contatos cadastrados aparecerão aqui -->
+        <div class="card-contato">
 
-        </section>
+            <div class="foto-contato">
 
-        <button
-            class="btn-adicionar"
-            onclick="window.location.href='pagina_adicionar_contato.html'">
+                👤
 
-            + ADICIONAR CONTATO
+            </div>
 
-        </button>
+            <div class="dados-contato">
 
-    </main>
+                <h3>Pai</h3>
 
-    <script src="js/script.js"></script>
+                <p>(99) 99999-9999</p>
+
+            </div>
+
+            <button
+                class="btn-opcoes"
+                type="button">
+
+                ⋮
+
+            </button>
+
+        </div>
+
+        <div class="card-contato">
+
+            <div class="foto-contato">
+
+                👤
+
+            </div>
+
+            <div class="dados-contato">
+
+                <h3>Mãe</h3>
+
+                <p>(99) 99999-9998</p>
+
+            </div>
+
+            <button
+                class="btn-opcoes"
+                type="button">
+
+                ⋮
+
+            </button>
+
+        </div>
+
+        <div class="card-contato">
+
+            <div class="foto-contato">
+
+                👤
+
+            </div>
+
+            <div class="dados-contato">
+
+                <h3>Irmã</h3>
+
+                <p>(99) 99999-9997</p>
+
+            </div>
+
+            <button
+                class="btn-opcoes"
+                type="button">
+
+                ⋮
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <button
+        id="btnAdicionarContato"
+        class="btn-adicionar"
+        type="button"
+        onclick="window.location.href='pagina_adicionar_contato.html'">
+
+        + ADICIONAR CONTATO
+
+    </button>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 

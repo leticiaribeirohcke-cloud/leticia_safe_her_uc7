@@ -2,133 +2,139 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - SOS</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-sos">
+<main class="pagina-sos">
 
-        <header class="topo-sos">
+    <header class="topo">
 
-            <div class="menu">
-                ☰
-            </div>
+        <button
+            id="btnMenu"
+            class="icone">
 
-            <h2>SafeHer</h2>
+            ☰
 
-            <div class="notificacao">
-                🔔
-            </div>
+        </button>
 
-        </header>
+        <h1>SafeHer</h1>
 
-        <section class="area-sos">
+        <button
+            id="btnNotificacao"
+            class="icone">
 
-            <h3>PRECISA DE AJUDA?</h3>
+            🔔
 
-            <button
-                class="botao-sos"
-                id="btnSOS">
+        </button>
 
-                SOS
+    </header>
 
-            </button>
+    <section class="card-sos">
 
-            <p>TOQUE PARA ENVIAR O ALERTA</p>
+        <h2>
 
-        </section>
+            PRECISA DE AJUDA?
 
-        <section class="opcoes">
+        </h2>
 
-            <a href="pagina_localizacao.html">
-                📍 Compartilhar localização
-            </a>
+        <a href="pagina_mensagem_sos.html">
+        <button
+            id="btnSOS"
+            class="botao-sos">
 
-            <a href="pagina_contatos.html">
-                👥 Contatos de confiança
-            </a>
+            SOS
 
-            <a href="pagina_historico_de_alertas.html">
-                📋 Histórico de alertas
-            </a>
+        </button>
+        </a>
 
-            <a href="pagina_gravador.html">
-                🎤 Gravador de voz
-            </a>
+        <p>
 
-            <a href="pagina_configuracoes.html">
-                ⚙️ Configurações
-            </a>
+            Toque no botão para solicitar ajuda imediatamente.
 
-        </section>
+        </p>
 
-        <footer class="menu-inferior">
+    </section>
 
-            <a href="pagina_sos.html">
-                🏠 <br> INÍCIO
-            </a>
+    <section class="lista-opcoes">
 
-            <a href="pagina_contatos.html">
-                👥 <br> CONTATOS
-            </a>
+        <a href="pagina_localizacao.html">
 
-            <a href="pagina_historico_de_alertas.html">
-                🔔 <br> ALERTAS
-            </a>
+            📍 Compartilhar localização
 
-            <a href="pagina_perfil.html">
-                👤 <br> PERFIL
-            </a>
+        </a>
 
-        </footer>
+        <a href="pagina_contatos.html">
 
-    </main>
+            👥 Contatos de confiança
 
-    <!-- POPUP SOS -->
+        </a>
 
-    <div
-        id="popupSOS"
-        class="popup-sos">
+        <a href="pagina_historico_de_alertas.html">
 
-        <div class="janela-sos">
+            🚨 Histórico de alertas
 
-            <div class="icone-sos">
-                SOS
-            </div>
+        </a>
 
-            <h3>Enviar alerta agora?</h3>
+        <a href="pagina_gravador.html">
 
-            <p>
-                Seus contatos de emergência serão notificados
-                com sua localização em tempo real.
-            </p>
+            🎤 Gravador de voz
 
-            <button
-                class="btn-enviar"
-                id="btnEnviarAlerta">
+        </a>
 
-                ENVIAR ALERTA
+        <a href="pagina_configuracoes.html">
 
-            </button>
+            ⚙ Configurações
 
-            <button
-                class="btn-cancelar"
-                id="btnCancelarPopup">
+        </a>
 
-                CANCELAR
+    </section>
 
-            </button>
+    <footer class="menu-inferior">
 
-        </div>
+        <a href="pagina_sos.html">
 
-    </div>
+            🏠
+            <span>Início</span>
 
-    <script src="js/script.js"></script>
+        </a>
+
+        <a href="pagina_contatos.html">
+
+            👥
+            <span>Contatos</span>
+
+        </a>
+
+        <a href="pagina_historico_de_alertas.html">
+
+            🚨
+            <span>Alertas</span>
+
+        </a>
+
+        <a href="pagina_perfil.html">
+
+            👤
+            <span>Perfil</span>
+
+        </a>
+
+    </footer>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 

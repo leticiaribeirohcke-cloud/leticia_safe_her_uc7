@@ -2,70 +2,110 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeHer - Configurações</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SafeHer - Configurações</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-contatos">
+<main class="pagina-configuracoes">
 
-        <a href="pagina_sos.html" class="voltar">
-            ←
-        </a>
+<a href="pagina_sos.html" class="voltar">
 
-        <h1>Configurações</h1>
+←
 
-        <section class="lista-contatos">
+</a>
 
-            <div class="contato">
+<section class="cabecalho-config">
 
-                <div>
+<h1>
 
-                    <h3>Notificações</h3>
+Configurações
 
-                    <p>Ativar notificações do aplicativo</p>
+</h1>
 
-                </div>
+<p>
 
-                <input
-                    type="checkbox"
-                    id="notificacoes">
+Personalize o funcionamento do aplicativo.
 
-            </div>
+</p>
 
-            <div class="contato">
+</section>
 
-                <div>
+<section class="card-config">
 
-                    <h3>Compartilhamento Automático</h3>
+<div class="item-config">
 
-                    <p>Enviar localização automaticamente</p>
+<div>
 
-                </div>
+<h3>
 
-                <input
-                    type="checkbox"
-                    id="compartilhamento">
+Notificações
 
-            </div>
+</h3>
 
-        </section>
+<p>
 
-        <button
-            id="btnSalvarConfig"
-            class="btn-adicionar">
+Receber notificações do aplicativo.
 
-            SALVAR CONFIGURAÇÕES
+</p>
 
-        </button>
+</div>
 
-    </main>
+<input
+type="checkbox"
+id="notificacoes">
 
-    <script src="js/script.js"></script>
+</div>
+
+<div class="item-config">
+
+<div>
+
+<h3>
+
+Compartilhamento Automático
+
+</h3>
+
+<p>
+
+Enviar localização automaticamente.
+
+</p>
+
+</div>
+
+<input
+type="checkbox"
+id="compartilhamento">
+
+</div>
+
+</section>
+
+<a href="pagina_sos.html">
+<button
+id="btnSalvarConfig"
+class="btn-salvar-config">
+
+SALVAR CONFIGURAÇÕES
+
+</button>
+</a>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 

@@ -2,56 +2,94 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeHer - Gravador</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SafeHer - Gravador</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
 </head>
 
 <body>
 
-    <main class="pagina-contatos">
+<main class="pagina-gravador">
 
-        <a href="pagina_sos.html" class="voltar">
-            ←
-        </a>
+<a href="pagina_sos.html" class="voltar">
 
-        <h1>Gravador de Voz</h1>
+←
 
-        <div class="contato">
+</a>
 
-            <div>
+<section class="cabecalho-gravador">
 
-                <h3>Gravação de Emergência</h3>
+<h1>Gravador de Voz</h1>
 
-                <p>
-                    Grave um áudio para registrar a situação.
-                </p>
+<p>
 
-            </div>
+Grave um áudio para registrar uma situação de emergência.
 
-        </div>
+</p>
 
-        <button
-            id="btnIniciarGravacao"
-            class="btn-adicionar">
+</section>
 
-            INICIAR GRAVAÇÃO
+<section class="card-gravador">
 
-        </button>
+<div class="microfone">
 
-        <button
-            id="btnPararGravacao"
-            class="btn-adicionar">
+🎤
 
-            PARAR GRAVAÇÃO
+</div>
 
-        </button>
+<h2>
 
-    </main>
+Gravação de Emergência
 
-    <script src="js/script.js"></script>
+</h2>
+
+<p>
+
+O áudio poderá servir como registro da ocorrência.
+
+</p>
+
+<div
+class="status-gravacao"
+id="statusGravacao">
+
+Pronto para gravar
+
+</div>
+
+</section>
+
+<div class="botoes-gravador">
+
+<button
+id="btnIniciarGravacao"
+class="btn-iniciar">
+
+INICIAR GRAVAÇÃO
+
+</button>
+
+<button
+id="btnPararGravacao"
+class="btn-parar">
+
+PARAR GRAVAÇÃO
+
+</button>
+
+</div>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 

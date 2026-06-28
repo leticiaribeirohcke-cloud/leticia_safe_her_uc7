@@ -2,23 +2,30 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SafeHer - Login</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
     <main class="pagina-login">
 
+        <!-- Botão voltar -->
         <div class="voltar">
+
             <a href="pagina_inicial.html">
                 ←
             </a>
+
         </div>
 
+        <!-- Cabeçalho -->
         <section class="cabecalho-login">
 
             <h1>Bem-vinda de volta!</h1>
@@ -29,9 +36,8 @@
 
         </section>
 
-        <form
-            id="formLogin"
-            class="form-login">
+        <!-- Formulário -->
+        <form class="form-login">
 
             <label for="email">
                 Email
@@ -40,8 +46,7 @@
             <input
                 type="email"
                 id="email"
-                placeholder="Digite seu email"
-                required>
+                placeholder="Digite seu email">
 
             <label for="senha">
                 Senha
@@ -50,12 +55,11 @@
             <input
                 type="password"
                 id="senha"
-                placeholder="Digite sua senha"
-                required>
+                placeholder="Digite sua senha">
 
             <div class="esqueceu-senha">
 
-                <a href="recuperar_senha.html">
+                <a href="pagina_recuperar_senha.html">
                     Esqueceu sua senha?
                 </a>
 
@@ -64,22 +68,26 @@
             <div class="area-botao">
 
                 <button
-                    type="submit"
-                    class="btn-entrar">
-                <a href="pagina_sos.html">
+                    type="button"
+                    class="btn-entrar"
+                    onclick="window.location.href='pagina_sos.html'">
 
                     ENTRAR
-                </a>
+
                 </button>
 
             </div>
 
         </form>
 
+        <!-- Separador -->
         <div class="separador">
+
             <span>OU</span>
+
         </div>
 
+        <!-- Login Google -->
         <div class="google-login">
 
             <button
@@ -92,6 +100,7 @@
 
         </div>
 
+        <!-- Cadastro -->
         <div class="cadastro-link">
 
             <p>
@@ -99,7 +108,9 @@
                 Não possui conta?
 
                 <a href="pagina_cadastro.html">
+
                     Cadastre-se
+
                 </a>
 
             </p>
