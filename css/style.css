@@ -1,536 +1,1588 @@
-/* ==========================
-CONFIGURAÇÕES GERAIS
-========================== */
+/* =====================================================
+RESET
+===================================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-background-color:#F1ECFA;
-font-family:Arial, sans-serif;
+    background:#F4F0FB;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
 }
 
-/* ==========================
-PÁGINA INICIAL
-========================== */
-
-.pagina-inicial{
-text-align:center;
-padding:30px;
+main{
+    width:100%;
+    max-width:900px;
+    margin:auto;
 }
 
-.logo-area img{
-width:100%;
-max-width:800px;
+/* =====================================================
+CONFIGURAÇÕES GERAIS
+===================================================== */
+
+h1{
+    color:#7B4AE2;
+    font-size:30px;
 }
 
-.texto-principal h1{
-margin:55px 0;
-color:#000;
+h2{
+    color:#444;
 }
 
-.menu-acesso{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:15px;
+p{
+    color:#666;
+    line-height:1.5;
 }
 
-.menu-acesso button{
-width:300px;
-padding:15px;
-border:none;
-border-radius:8px;
-background:#7B61FF;
-color:white;
-cursor:pointer;
-transition:0.3s;
+button{
+    cursor:pointer;
+    transition:.3s;
 }
 
-.menu-acesso button:hover {
-    background-color: #6548f5;
-}
-
-.imagem-destaque img{
-width:700px;
-margin-top:30px;
+button:hover{
+    transform:scale(1.02);
 }
 
 
-/* ==========================
+/* =====================================================
 BOTÃO VOLTAR
-========================== */
+===================================================== */
 
 .voltar{
-width:80%;
-max-width:500px;
-margin-bottom:20px;
+    width:100%;
+    padding:25px;
 }
 
 .voltar a{
-text-decoration:none;
-color:black;
-font-size:30px;
-font-weight:bold;
+    text-decoration:none;
+    color:#333;
+    font-size:32px;
+    font-weight:bold;
 }
 
-/* ==========================
+/* =====================================================
+PÁGINA INICIAL
+===================================================== */
+
+.pagina-inicial{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.logo-area img{
+    width:500px;
+    max-width:1000px;
+}
+
+.texto-principal{
+    margin:35px 0;
+}
+
+.texto-principal h1{
+    font-size:35px;
+    margin-bottom:10px;
+    color: rgb(30, 29, 29);
+}
+
+.texto-principal p{
+    font-size:18px;
+}
+
+.menu-acesso{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:20px;
+}
+
+.menu-acesso button{
+    width:300px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.menu-acesso button:hover{
+    background:#7140E8;
+}
+
+.imagem-destaque img{
+    width:700px;
+    max-width:1000px;
+    margin-top:10px;
+}
+
+/* =====================================================
 LOGIN
-========================== */
+===================================================== */
 
 .pagina-login{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding-top:60px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
 }
 
 .cabecalho-login{
-text-align:center;
-margin-bottom:30px;
+    text-align:center;
+    margin-bottom:35px;
 }
 
 .cabecalho-login h1{
-font-size:35px;
+    margin-bottom:10px;
+    color: #333;
 }
-
-.cabecalho-login p{
-color:#666;
-margin-top:10px;
-}
-
 .form-login{
-width:80%;
-max-width:400px;
-display:flex;
-flex-direction:column;
+    width:100%;
+    max-width:430px;
+    display:flex;
+    flex-direction:column;
 }
 
 .form-login label{
-margin:15px 0 5px;
-font-weight:bold;
+    margin:15px 0 8px;
+    font-weight:bold;
+
+}
+.form-login input{
+    padding:14px;
+    border:1px solid #D6D6D6;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
 }
 
-.form-login input{
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
+.form-login input:focus{
+    border-color:#8B5CF6;
 }
 
 .esqueceu-senha{
-text-align:right;
-margin-top:10px;
+    text-align:right;
+    margin-top:12px;
 }
 
 .esqueceu-senha a{
-color:#8B5CF6;
-text-decoration:none;
+    color:#8B5CF6;
+    text-decoration:none;
 }
 
 .area-botao{
-display:flex;
-justify-content:center;
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
 }
 
 .btn-entrar,
 .btn-cadastro{
-width:250px;
-margin-top:20px;
-padding:12px;
-border:none;
-border-radius:8px;
-background:#8B5CF6;
-color:white;
-cursor:pointer;
-transition:0.3s;
+    width:260px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-size:16px;
+    font-weight:bold;
 }
 
 .btn-entrar:hover,
-.btn-cadastro:hover
-
-.separador{
-margin:25px 0;
-color:#666;
+.btn-cadastro:hover{
+    background:#7140E8;
 }
 
-.google-login button{
-width:250px;
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
-background:white;
-cursor:pointer;
+.titulo-recuperar{
+    color:#333;
+    text-align:center;
+    margin-bottom:15px;
 }
 
-.cadastro-link,
-.login-link{
-margin-top:20px;
+.pagina-recuperar{
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 35px;
 }
 
-.cadastro-link a,
-.login-link a{
-color:#8B5CF6;
-font-weight:bold;
-text-decoration:none;
-}
-
-/* ==========================
-CADASTRO
-========================== */
-
-.pagina-cadastro{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding-top:40px;
-}
-
-.cabecalho-cadastro{
-text-align:center;
-margin-bottom:20px;
-}
-
-.foto-perfil{
-width:250px;
-margin-bottom:10px;
-}
-
-.cabecalho-cadastro p{
-color:#666;
+.cabecalho-recuperar{
+    text-align:center;
+    margin-bottom:40px;
 }
 
 .form-cadastro{
-width:80%;
-max-width:400px;
-display:flex;
-flex-direction:column;
+    width:100%;
+    max-width:430px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-recuperar{
+    width:10%;
+    max-width:450px;
+}
+
+.separador{
+    margin:25px 0;
+    color:#888;
+    text-align:center;
+}
+
+.google-login{
+    display:flex;
+    justify-content:center;
+}
+
+.google-login button{
+    width:260px;
+    padding:14px;
+    border:1px solid #DDD;
+    border-radius:12px;
+    background:#FFF;
+}
+
+.google-login button:hover{
+    background:#F8F8F8;
+}
+
+.login-link,
+.cadastro-link{
+    margin-top:25px;
+    text-align:center;
+}
+
+.login-link a,
+.cadastro-link a{
+    color:#8B5CF6;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+/* =====================================================
+CADASTRO
+===================================================== */
+
+.pagina-cadastro{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:35px;
+}
+
+.cabecalho-cadastro{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.foto-perfil{
+    width:170px;
+    margin-bottom:15px;
+}
+
+.cabecalho-cadastro h1{
+    color: #333;
+}
+
+.cabecalho-cadastro p{
+    margin-top:10px;
+}
+
+.form-cadastro{
+    width:100%;
+    max-width:430px;
+    display:flex;
+    flex-direction:column;
 }
 
 .form-cadastro input{
-padding:12px;
-margin-bottom:12px;
-border:1px solid #ccc;
-border-radius:8px;
+    margin-bottom:15px;
+    padding:14px;
+    border:1px solid #DDD;
+    border-radius:10px;
+    outline:none;
 }
 
-.termos{
-display:flex;
-gap:8px;
-align-items:flex-start;
-margin:10px 0 20px;
-font-size:12px;
+.form-cadastro input:focus{
+    border-color:#8B5CF6;
 }
 
-.termos a{
-color:#8B5CF6;
-text-decoration:none;
+.btn-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.btn-criar-conta, .btn-entrar{
-    width: 250px;
-    padding: 12px;
-    border: none;                                                          
-    border-radius: 8px;
-    background-color: #8B5CF6;
-    color: white;
-    cursor: pointer;
+/* =========================
+   CHECKBOX TERMOS DE USO
+========================= */
+
+.termos,
+.termos-uso,
+.checkbox-termos{
+    width:380px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:20px;
+    margin-bottom:25px;
 }
 
-/* ==========================
-SOS
-========================== */
+.termos input,
+.termos-uso input,
+.checkbox-termos input{
+    width:90px;
+    height:15px;
+    flex-shrink: 90;
+    cursor:pointer;
+}
+
+.termos label,
+.termos-uso label,
+.checkbox-termos label{
+    width:300px;
+    text-align:justify;
+    font-size:14px;
+    line-height:20px;
+    color:#333;
+}
+
+/* =====================================================
+PÁGINA SOS
+===================================================== */
 
 .pagina-sos{
-min-height:100vh;
-display:flex;
-flex-direction:column;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    padding-bottom:90px;
 }
 
-.topo-sos{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 30px;
+/* ---------- Cabeçalho ---------- */
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 25px;
 }
 
-.menu,
-.notificacao{
-font-size:25px;
-cursor:pointer;
+.topo h1{
+    font-size:30px;
+    color:#7B4AE2;
 }
 
-.area-sos{
-width:80%;
-max-width:700px;
-margin:20px auto;
-background:#E8B8F2;
-padding:30px;
-border-radius:10px;
-text-align:center;
+.icone{
+    background:none;
+    border:none;
+    font-size:24px;
+    color:#7B4AE2;
+}
+
+/* ---------- Card SOS ---------- */
+.card-sos{
+    width:90%;
+    max-width:500px;
+    margin:20px auto;
+    background:#E9D9FF;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.card-sos h2{
+    margin-bottom:25px;
+    color:#333;
 }
 
 .botao-sos{
-width:120px;
-height:120px;
-border:none;
-border-radius:50%;
-background:red;
-color:white;
-font-size:35px;
-font-weight:bold;
-cursor:pointer;
+    width:170px;
+    height:170px;
+    border:none;
+    border-radius:50%;
+    background:#E53935;
+    color:#FFF;
+    font-size:42px;
+    font-weight:bold;
+    margin:15px 0;
+    box-shadow:0 0 25px rgba(229,57,53,.35);
 }
 
-.opcoes{
-width:80%;
-max-width:500px;
-margin:20px auto;
-display:flex;
-flex-direction:column;
-gap:15px;
+.botao-sos:hover{
+    transform:scale(1.06);
 }
 
-.opcoes a{
-background:white;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
-color:black;
+.card-sos p{
+    margin-top:15px;
+    font-weight:bold;
+    color:#555;
 }
 
+/* ---------- Lista ---------- */
+.lista-opcoes{
+    width:90%;
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.lista-opcoes a{
+    background:#FFF;
+    padding:18px;
+    border-radius:15px;
+    text-decoration:none;
+    color:#333;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+
+.lista-opcoes a:hover{
+    background:#F8F5FF;
+}
+
+.lista-opcoes i{
+    color:#8B5CF6;
+    font-size:22px;
+}
+
+/* ---------- Menu Inferior ---------- */
 .menu-inferior{
-margin-top:auto;
-display:flex;
-justify-content:space-around;
-padding:15px;
-background:white;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#FFF;
+    display:flex;
+    justify-content:space-around;
+    padding:15px 0;
+    box-shadow:0 -4px 12px rgba(0,0,0,.08);
 }
 
 .menu-inferior a{
-text-decoration:none;
-color:black;
-text-align:center;
+    text-decoration:none;
+    color:#666;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    font-size:14px;
 }
 
-/* ==========================
+.menu-inferior i{
+    font-size:20px;
+}
+
+.menu-inferior a:hover{
+    color:#8B5CF6;
+}
+
+/* =====================================================
 POPUP SOS
-========================== */
+===================================================== */
 
-.popup-sos{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.5);
-display:none;
-justify-content:center;
-align-items:center;
+.popup{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.45);
+    z-index:999;
 }
 
-.janela-sos{
-width:320px;
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
+.popup-card{
+    width:90%;
+    max-width:420px;
+    background:#FFF;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 
 .icone-sos{
-width:70px;
-height:70px;
-margin:auto;
-border-radius:50%;
-background:red;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-font-weight:bold;
+    width:90px;
+    height:90px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    background:#E53935;
+    color:#FFF;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.btn-enviar,
-.btn-cancelar{
-width:100%;
-padding:12px;
-border-radius:8px;
-cursor:pointer;
-margin-top:10px;
+.popup-card h2{
+    margin-bottom:15px;
 }
 
+.popup-card p{
+    margin-bottom:25px;
+}
+
+/* ---------- Botões ---------- */
 .btn-enviar{
-border:none;
-background:red;
-color:white;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#E53935;
+    color:#FFF;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.btn-enviar:hover{
+    background:#D32F2F;
 }
 
 .btn-cancelar{
-border:1px solid #8B5CF6;
-background:white;
-color:#8B5CF6;
+    width:100%;
+    padding:15px;
+    border:2px solid #8B5CF6;
+    border-radius:12px;
+    background:#FFF;
+    color:#8B5CF6;
+    font-weight:bold;
 }
 
-/* ==========================
-ALERTA ENVIADO
-========================== */
+.btn-cancelar:hover{
+    background:#F5F1FF;
+}
+
+/* =====================================================
+PÁGINA ALERTA ENVIADO
+===================================================== */
 
 .pagina-alerta{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
 }
 
 .alerta-enviado{
-width:90%;
-max-width:500px;
-background:white;
-padding:40px;
-border-radius:20px;
-text-align:center;
+    width:100%;
+    max-width:520px;
+    background:#FFF;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.alerta-enviado h1{
+    color:#E53935;
+    margin-bottom:15px;
+}
+
+.alerta-enviado p{
+    margin:18px 0;
 }
 
 .localizacao-card{
-margin-top:20px;
-padding:15px;
-border:1px solid #ddd;
-border-radius:10px;
-display:flex;
-justify-content:space-between;
-}
-
-.btn-ligar,
-.btn-cancelar-alerta{
-width:100%;
-padding:12px;
-margin-top:15px;
-border-radius:8px;
-cursor:pointer;
+    margin:30px 0;
+    padding:18px;
+    background:#F7F7F7;
+    border-radius:15px;
 }
 
 .btn-ligar{
-border:none;
-background:#8B5CF6;
-color:white;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-weight:bold;
+    margin-bottom:12px;
 }
 
 .btn-cancelar-alerta{
-background:white;
-color:#8B5CF6;
-border:1px solid #8B5CF6;
+    width:100%;
+    padding:15px;
+    border:2px solid #8B5CF6;
+    border-radius:12px;
+    background:#FFF;
+    color:#8B5CF6;
+    font-weight:bold;
 }
 
-/* ==========================
+/* =====================================================
+PÁGINA PERFIL
+===================================================== */
+
+.pagina-perfil{
+    min-height:100vh;
+    padding:30px;
+}
+
+.perfil-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.perfil-card{
+    width:100%;
+    max-width:500px;
+    background:#FFF;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.foto-perfil-area{
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.foto-perfil{
+    width:150px;
+    border-radius:50%;
+}
+
+.dados-perfil{
+    margin:30px 0;
+}
+
+.campo-perfil{
+    background:#F7F3FF;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+    text-align:left;
+}
+
+.titulo-campo{
+    color:#8B5CF6;
+    font-weight:bold;
+    display:block;
+    margin-bottom:5px;
+}
+
+.btn-editar,
+.btn-sair{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.btn-editar{
+    background:#8B5CF6;
+    color:#FFF;
+}
+
+.btn-sair{
+    background:#FFF;
+    border:2px solid #8B5CF6;
+    color:#8B5CF6;
+}
+
+/* =====================================================
+LOCALIZAÇÃO
+===================================================== */
+
+.pagina-localizacao{
+    min-height:100vh;
+    padding:30px;
+}
+
+.cabecalho-localizacao{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.card-localizacao{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    background:#FFF;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.icone-localizacao{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+#localizacaoAtual{
+    margin-top:20px;
+    color:#555;
+    font-size:16px;
+}
+
+.btn-compartilhar{
+    display:block;
+    width:320px;
+    max-width:90%;
+    margin:35px auto;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-weight:bold;
+}
+
+/* =====================================================
 CONTATOS
-========================== */
+===================================================== */
 
 .pagina-contatos{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding-top:40px;
+    min-height:100vh;
+    padding:30px;
+}
+
+.pagina-contatos h1{
+    text-align:center;
+    margin-bottom:30px;
 }
 
 .lista-contatos{
-width:80%;
-max-width:500px;
+    width:100%;
+    max-width:550px;
+    margin:auto;
 }
 
-.contato{
-background:white;
-border:1px solid #ddd;
-border-radius:10px;
-padding:15px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
+.card-contato{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#FFF;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:18px;
+    box-shadow:0 5px 12px rgba(0,0,0,.07);
+}
+
+.foto-contato{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#E9D9FF;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    margin-right:15px;
+}
+
+.dados-contato{
+    flex:1;
+}
+
+.dados-contato h3{
+    margin-bottom:5px;
+}
+
+.opcoes-contato{
+    border:none;
+    background:none;
+    font-size:24px;
+    color:#777;
 }
 
 .btn-adicionar{
-width:280px;
-padding:12px;
-margin-top:20px;
-border:none;
-border-radius:8px;
-background:#C76CE8;
-color:white;
-cursor:pointer;
+    display:block;
+    width:320px;
+    max-width:90%;
+    margin:35px auto;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-weight:bold;
 }
 
-/* ==========================
-HISTÓRICO
-========================== */
+/* =====================================================
+ADICIONAR CONTATO
+===================================================== */
+
+.cabecalho-cadastro{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.form-cadastro{
+    width:100%;
+    max-width:450px;
+    margin:auto;
+}
+
+.form-cadastro input{
+    width:100%;
+    margin-bottom:18px;
+    padding:14px;
+    border:1px solid #DDD;
+    border-radius:10px;
+}
+
+.area-botao{
+    display:flex;
+    justify-content: center;
+}
+
+/* =====================================================
+HISTÓRICO DE ALERTAS
+===================================================== */
 
 .pagina-historico{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding-top:40px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
 }
 
+/* cabeçalho */
+.cabecalho-historico{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* filtros */
 .filtros{
-display:flex;
-gap:10px;
-margin:20px 0;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
 }
 
 .filtros button{
-padding:8px 15px;
-border-radius:8px;
-border:1px solid #ccc;
-background:white;
-cursor:pointer;
+    padding:10px 18px;
+    border:none;
+    border-radius:20px;
+    background:#E9D9FF;
+    color:#7B4AE2;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.filtros .ativo{
-background:#C76CE8;
-color:white;
+.filtros button:hover{
+    transform:translateY(-2px);
 }
 
+.filtros button.ativo{
+    background:#8B5CF6;
+    color:#FFF;
+}
+
+/* lista central */
 .lista-alertas{
-width:80%;
-max-width:500px;
+    width:100%;
+    max-width:650px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
-.alerta-card{
-background:white;
-border:1px solid #ddd;
-border-radius:10px;
-padding:15px;
-margin-bottom:12px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* CARD PRINCIPAL */
+.card-alerta{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    background:#FFF;
+    padding:18px;
+    border-radius:15px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+    transition:.25s;
 }
 
-.status-concluido{
-color:green;
-font-weight:bold;
+.card-alerta:hover{
+    transform:translateY(-3px);
 }
 
-.status-cancelado{
-color:red;
-font-weight:bold;
+/* ícone */
+.icone-alerta{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:cneter;
+    font-size:20px;
+    margin-right:15px;
 }
 
-/* ==========================
-RESPONSIVO
-========================== */
+/* layout interno */
+.dados-alerta{
+    flex:1;
+}
+
+.dados-alerta h3{
+    margin-bottom:8px;
+    color:#333;
+}
+
+.dados-alerta p{
+    font-size:14px;
+    color:#666;
+    margin-bottom:4px;
+}
+
+/* status */
+.status-alerta{
+    font-size:13px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:12px;
+}
+
+/* cores status */
+.card-alerta.enviado .icone-alerta,
+.status-alerta.enviado{
+    background:#4CAF50;
+    color:#FFF;
+}
+
+.card-alerta.cancelado .icone-alerta,
+.status-alerta.cancelado{
+    background:#F44336;
+    color:#FFF;
+}
+
+/* =====================================================
+GRAVADOR
+===================================================== */
+
+.pagina-gravador{
+    min-height:100vh;
+    padding:30px;
+}
+
+.cabecalho-gravador{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.card-gravador{
+    width:100%;
+    max-width:50px;
+    margin:auto;
+    background:#FFF;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.microfone{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.status-gravacao{
+    margin-top:25px;
+    padding:14px;
+    border-radius:10px;
+    background:#F3EEFF;
+    color:#7B4AE2;
+    font-weight:bold;
+}
+
+.botoes-gravador{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.btn-iniciar{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-weight:bold;
+}
+
+.btn-parar{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#E53935;
+    color:#FFF;
+    font-weight:bold;
+}
+
+/* =====================================================
+CONFIGURAÇÕES
+===================================================== */
+
+.pagina-configuracoes{
+    min-height:100vh;
+    padding:30px;
+}
+
+.pagina-configuracoes h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.lista-config{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+.item-config{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#FFF;
+    padding:18px;
+    margin-bottom:18px;
+    border-radius:15px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+.item-config h3{
+    margin-bottom:5px;
+}
+
+.item-config input{
+    transform:scale(1.4);
+}
+
+#btnSalvarConfig{
+    display:block;
+    width:320px;
+    max-width:90%;
+    margin:35px auto;
+}
+
+/* =====================================================
+RESPONSIVIDADE
+===================================================== */
 
 @media(max-width:768px){
+    h1{
+        font-size:26px;
+    }
 
-.logo-area img,
-.imagem-destaque img{
+    .botao-sos{
+        width:150px;
+        height:150px;
+        font-size:38px;
+    }
+
+    .card-sos{
+        padding:25px;
+    }
+
+    .menu-acesso button,
+    .btn-entrar,
+    .btn-cadastro,
+    .btn-compartilhar,
+    .btn-adicionar{
+        width:100%;
+    }
+
+    .botoes-gravador{
+        flex-direction:column;
+    }
+
+    .btn-iniciar,
+    .btn-parar{
+        width:100%;
+    }
+
+    .alerta-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .item-config{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+}
+
+/* =====================================================
+ANIMAÇÕES
+===================================================== */
+
+button{
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.card-contato:hover,
+.alerta-card:hover,
+.item-config:hover,
+.card-localizacao:hover,
+.card-gravador:hover,
+.perfil-card:hover{
+    transform:translateY(-3px);
+    transition:.25s;
+}
+
+.card-contato,
+.alerta-card,
+.item-config,
+.card-localizacao,
+.card-gravador,
+.perfil-card{
+    transition:.25s;
+}
+
+/* Ajuste da página Recuperar Senha */
+.pagina-recuperar{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px 35px;
+}
+
+.pagina-recuperar .voltar{
+    width:100%;
+    margin-bottom:15px;
+}
+
+.pagina-recuperar .cabecalho-cadastro{
+    margin-bottom:20px;
+}
+
+.pagina-recuperar .form-cadastro{
+    margin-top:0;
+}
+
+/* =====================================================
+PÁGINA MENSAGEM SOS (AJUSTE REAL)
+===================================================== */
+
+.pagina-mensagem-sos{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.card-mensagem-sos{
+    width:100%;
+    max-width:500px;
+    background:#FFF;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.card-mensagem-sos h2{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.card-mensagem-sos{
+    margin-bottom:25px;
+    color:#666;
+    line-height:1.6;
+}
+
+.btn-sos-enviar{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    margin-bottom:12px;
+}
+
+.btn-sos-enviar:hover{
+    background:#7140E8;
+}
+
+.btn-sos-cancelar{
+    width:100%;
+    padding:14px;
+    border:2px solid #8B5CF6;
+    border-radius:12px;
+    background:#FFF;
+    color:#8B5CF6;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-sos-cancelar:hover{
+    background:#F5F1FF;
+}
+
+/* =====================================================
+ADICIONAR CONTATO - CENTRALIZAÇÃO REAL
+===================================================== */
+
+.pagina-adicionar-contato{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+}
+
+/* centraliza título e descrição */
+.cabecalho-contato{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* formulário centralizado como bloco único */
+.form-cadastro{
+    width:100%;
+    max-width:450px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+/* inputs continuam ocupando largura total */
+.form-cadastro input{
     width:100%;
 }
 
-.menu-acesso button,
-.btn-entrar,
-.btn-cadastro{
+/* botão centralizado corretmente */
+.form-cadastro .btn-cadastro{
+    width:100%;
+    max-width:320px;
+    margin-top:10px;
+}
+
+/* =====================================================
+CONFIGURAÇÕES - CENTRALIZAÇÃO E PADRÃO VISUAL
+===================================================== */
+
+.pagina-configuracoes{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+}
+
+/* cabeçalho centralizado */
+.cabecalho-config{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* card central real */
+.card-config{
+    width:100%;
+    max-width:550px;
+    background:#FFF;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* itens centralizados corretamente */
+.item-config{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#FFF;
+    padding:18px;
+    border-radius:15px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
     width:100%;
 }
+
+/* texto interno alinhado */
+.item-config div{
+    text-align:left;
+}
+
+/* checkbox alinhado */
+.item-config input{
+    transform:scale(1.4);
+}
+/* =====================================================
+BOTÃO SALVAR CONFIGURAÇÕES (PADRÃO REAL DO SISTEMA)
+===================================================== */
+
+.btn-salvar-config{
+    width:100%;
+    max-width:320px;
+    margin:30px auto;
+    display:block;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+/* hover igual aos outros botões do sistema */
+.btn-salvar-config:hover{
+    background:#7140E8;
+}
+
+/* =========================
+TERMOS DE USO + POLÍTICA 
+========================= */
+
+.pagina-termos,
+.pagina-politica{
+    min-height:100vh;
+    background:#F4F0FB;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+}
+
+/* botão voltar alinhado */
+.voltar{
+    width:100%;
+    max-width:700px;
+    margin-bottom:15px;
+}
+
+/* título centralizado */
+.pagina-termos h1,
+.pagina-politica h1{
+    text-align:center;
+    color:#7B4AE2;
+    margin-bottom:20px;
+}
+
+/* CARD BRANCO CENTRAL */
+.pagina-termos > p,
+.pagina-termos > h2,
+.pagina-politica > p,
+.pagina-politica > h2{
+    max-width:700px;
+}
+
+.pagina-termos,
+.pagina-politica{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* cria o “bloco branco” */
+.pagina-termos,
+.pagina-politica{
+    background:#F4F0FB;
+}
+
+/* CARD VISUAL REAL */
+.pagina-termos,
+.pagina-politica{
+    position:relative;
+}
+
+/* wrapper branco */
+.pagina-termos::before,
+.pagina-politica::before{
+    content:"";
+    position:absolute;
+    top:90px;
+    bottom:30px;
+    width:90%;
+    max-width:750px;
+    background:#FFF;
+    border-radius:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    z-index:0;
+}
+
+/* joga o conteúdo por cima do card */
+.pagina-termos > *,
+.pagina-politica > *{
+    position:relative;
+    z-index:1;
+    padding-left:25px;
+    padding-right:25px;
+}
+
+/* espaçamento do texto */
+.pagina-termos p,
+.pagina-politica p{
+    margin-bottom:15px;
+    color:#666;
+}
+
+.pagina-termos h2,
+.pagina-politica h2{
+    margin-top:20px;
+    margin-bottom:10px;
+    color:#444;
+}
+
+/* =====================
+GRAVADOR
+===================== */
+
+.pagina-gravador{
+    min-height:100vh;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* CABEÇALHO */
+.cabecalho-gravador{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.cabecalho-gravador h1{
+    color:#7B4AE2;
+    margin-bottom:10px;
+}
+
+.cabecalho-gravador p{
+    color:#666;
+}
+
+/* CARD */
+.card-gravador{
+    width:100%;
+    max-width:500px;
+    background:#FFF;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+/* MICROFONE */
+.microfone{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+/* TÍTULO DO CARD */
+.card-gravador h2{
+    margin-bottom:10px;
+    color:#333;
+}
+
+/* TEXTO */
+.card-gravador p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* STATUS */
+.status-gravacao{
+    margin-top:15px;
+    padding:14px;
+    border-radius:10px;
+    background:#F3EEFF;
+    color:#7B4AE2;
+    font-weight:bold;
+}
+
+/* BOTÕES */
+.botoes-gravador{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+/* INICIAR */
+.btn-iniciar{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#8B5CF6;
+    color:#FFF;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-iniciar:hover{
+    background:#7140E8;
+}
+
+/* PARAR */
+.btn-parar{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#E53935;
+    color:#FFF;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-parar:hover{
+    background:#D32F2F;
 }
